@@ -1,15 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+    <title>Teal'c (of Chulak)</title>
 </head>
 
 <body>
 
+    <header>
+        Teal'c hosszabb jellemzése
+    </header>
+    <br>
+
+    <nav>
+        <a href="home.html">Home</a> |
+        <a href="works.html">Works</a> |
+        <a href="gallery.html">Gallery</a> |
+        <a href="about.html">About</a>
+    </nav>
+    <aside>
+        <div><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic2.wikia.nocookie.net%2F__cb20091013035253%2Fstargate%2Fimages%2Fc%2Fc7%2FTeal%2527cLaugh.jpg&f=1&nofb=1" alt="Tealc in the Stargate Commands" width="250"></div>
+    </aside>
+
+    <section>
+        Teal'c egy jaffa nevű idegen faj tagja a Chulak bolygóról. Külső megjelenését tekintve emberszerű, de a gyomránál van egy X alakú vágás. Mikor egy jaffa eléri a 8. életévét, egy Goa'uld lárvát helyeznek bele, egy szimbiotát, ami benne fejlődik. Nagyon
+        erős szimbiotikus kapcsolat alakul ki közöttük, mivel az élősködő biztosítja a jaffa számára, hogy mindig erős és egészséges legyen, immunitás biztosít számára mindenféle betegség és fertőzéssel szemben, éppen ezért a jaffák nagyon sokáig élnek.
+        7 éves emésztési periódus után a parazita másik gazdatestet keres. Minden jaffának a homlokán van egy szimbólum, ami jelzi, hogy az adott jaffában egy szimbiota lakozik. A Kigyó Gárda a jaffák elit, királyi gárdája, aki a Goa'uld Apophist szolgálják,
+        Teal'c is közéjük tartozott, amíg nem találkozott a CSK1-el.
+        <h3>A színészről</h3>
+        Christopher Judge Bár úgy tűnt Christopher Judgeból focista lesz, hiszen az Oregoni Egyetemre futball ösztöndíjat kapott, ahol szép sikereket ért el, valójában mindig is színész szeretett volna lenni. Több tévéfilm sorozatban is szerepelt, köztük a MacGyverben
+        is. Christopher Judge eredetileg focistának készült. Az Oregoni Egyetemtől futball ösztöndíjat kapott, háromszoros All-American válogatott volt, s játszott a Hula Bowl-ban is, de a szíve mélyén mindig tudta, hogy valójában színész akar lenni.
+        Még Oregonban jelentkezett egy válogatásra, ahol a FOX KLSR adó reggeli show-jához kerestek műsorvezetőt. Öt perces monológjával sikerült megszereznie az állást, aminek köszönhetően több televíziós komédiában szerepelhetett, mint például a Martin,
+        a The Fresh Prince of Bel Air, a Lush Life, és a The Jamie Foxx Show. Szerepelt többek között a The Burning Zoneban, a Wise Guyban, a 21 Jump Streetben, a MacGyverben ás a Gabriel's Fireben, mielőtt a Sirens című sorozat állandó szereplője lett,
+        Richie Stylest alakította. Játszott a
+        <ul>
+            <li>The Glory Yearsben,</li>
+            <li>a Little Feetben,</li>
+            <li>a Bird on a Wireben,</li>
+            <li>a Cadence-ben</li>
+            <li>és a House Party II-ben is, ahol az egyik rosszfiút, Milest alakította.</li>
+        </ul>Játszott az Out of Pocket című filmben is, melyben partnere Jennifer Beals volt. Jelenleg Teal'c-ként a Stargate SG-1 sztárja, s jelenlegi producere, Michael Greenburg testvérével, Ross Greenburggel arra készül, hogy az HBO Sports új filmjében
+        életre keltse Joe Louist. Judge Los Angelesben a Howard Fine Studioban tanult drámát, miközben nem hagyta abba a sportolást sem. Nemrég elkészítette első saját filmjét, a Hacks-t,melynek producere és főszereplője is volt egyben. Emellett megjelent
+        első CDje is, amelynek címe "We're Going to Take Our Clothes Off.". Judge hangját adta több rajzfilmhez is, többek között az ő hangján szólal meg Simon Gray az Action Manben, Plato a Book of Virtuesben és Magneto az X-Menben. Szabadidejét legszívesebben
+        három gyermekével, Christopherrel, Cameronnal és Catrinával tölti.
+        <br> Magyar hangja: Szőke Zoltán
+    </section>
+
+
+    <section>
+        <div class="wrapper">
+            <h2>Kapcsolatfelvételi form</h2>
+            <form id="contact-form" method="post" action="javascript:alert('Itt most valami nagyon-nagyon backendes dolog fog történni.');">
+                <p class="label">Teljes név *</p>
+                <input type="text" name="name" required pattern=".{5,}" placeholder="Teljes név" required>
+                <p class="label">E-mail cím:*</p>
+                <input type="email" required placeholder="E-mail cím">
+                <!-- nem találtam működő e-mail regex patternt. A legközelebbi ez volt. pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" -->
+                <p class="label">Üzenet: *</p>
+                <input type="text" name="message" rows="6" required pattern=".{20,}" placeholder="Kérem, gépelje be az üzenetét ide!">
+                <div id="alert"></div>
+
+                <button id="submit-button" type="submit">Üzenet
+                    elküldése</button>
+                <p class=" warning-message ">Vigyázat! Ha spamelni mer, kollégám Chuck Norris fogja meglátogatni.
+                </p>
+            </form>
+
+        </div>
+    </section>
+    <br>
+    <footer>
+        <button id="backToHome" onclick="window.location.href='./home.html' ; ">Vissza a főoldalra</button>
+    </footer>
 </body>
 
 </html>
