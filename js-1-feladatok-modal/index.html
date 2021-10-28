@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/4a23ae3c90.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="backgrund_image"></div>
+	<h1>Kálnoky László - Shakespeare: XIX. Henrik (műfordítás-paródia)</h1>
+
+	<h3>Harmadik felvonás, tizenötödik szín</h3>
+
+	<i>(Henrik király, Lord Downtar, Anyakirályné, tombárok, pálhahordozók)</i><br>
+	<br>
+	<strong>DOWNTAR:</strong><br>
+	Felség, a franc föld künysõ parlatán<br>
+	elült a hadvasak zadorlata.<br>
+	Bék ül hevély-csornáló Mars helyén;<br>
+	s a nép, a tél-túl potnát, csart, sugát,<br>
+	pohontyot vesztõ, nyögsanyarta nép<br>
+	tallót subál, polyhót vet parlagon,<br>
+	s ha pönty aszalva, surboly ha beért,<br>
+	újpénz fejében vesterát lakik,<br>
+	zengõ pakád szavára jár hokornyást,<br>
+	s dibározik Bonárdus innepén.<br>
+	A franc király, ki – tudjuk – fõ gyimót,<br>
+	s hétért kitesz, még morcolánkodik,<br>
+	Richárdot fölcihellve ellened,<br>
+	ennhorjodat, míg téged elsümérel,<br>
+	pihál, de csak kurtán s fonátosan.<br>
+	Mert hosszú nótát a cölöpmadár –<br>
+	hajósok tartják – ritka nap pityog.<br>
+	<br>
+	<strong>HENRIK:</strong><br>
+	Csitándiságomat csotválja még<br>
+	e purhonya, ez a pöhös nyagóg!<br>
+	S Richárd, a nyekre? Hát õ? Mondsza csak!<br>
+	<br>
+	<strong>DOWNTAR:</strong><br>
+	Csáp cselkesiddel sunnyog és butog<br>
+	a Vérgonyasztón…<br>
+	<br>
+	<strong>ANYAKIRÁLYNÉ:</strong> <br>
+	A Vérgonyasztón? Ó, süh! Pém! Piha!<br>
+	Szotykon vatyorgó, páhás veckelem!<br>
+	Süly rá, ki vity-váty cselkesek közin<br>
+	ennhorja ellen ily pórén pocáz!<br>
+	Csorhózzék szik töpörré jonha, vetyke,<br>
+	folyánk cihó duzzon rút harpocsán!<br>
+	Ó, habkaságos, pátyos-szép nyoszolma,<br>
+	hol monhóm szörnyt csüvöllött, süly reád!<br>
+	Süly rátok, hónál hóbb, duzos gemellõk,<br>
+	miknek nedén a ded földemhedett!<br>
+	Mert nincs ponyább, nincs csetvesebb, riháltabb,<br>
+	még torzs pöhöndiek között se, mint<br>
+	e csép, ki szét mandangolá a hont!<br>
+	<br>
+	(elhónyál)
+
+	<br><br>
+	<!-- Jelen esetben a  modalt ez a gomb nyitja meg, de átprogramozható -->
+	<button id="myBtn">Modal megnyitása</button>
+
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close"><i class="fas fa-times"></i></span>
+			<h1>Varró Dániel: TÚL A MASZAT-HEGYEN - részlet</h1>
+			<p>Kíváncsi gyerek volt Péterke,<br>
+				bedugta orrát az ételbe.<br>
+				Kiszólt a galuska:<br>
+				"Megrúglak Petyuska!"<br>
+				S Péterke elszállt az éterbe.<br>
+				                    
+				<button id="cancelBtn">Cancel</button>
+				<button id="okeyBtn">Okey</button>
+			</p>
+		</div>
+
+
+		<script>
+			let modal = document.getElementById('myModal');
+			let btn = document.getElementById("myBtn");
+			let span = document.getElementsByClassName("close")[0];
+
+			btn.onclick = function () {
+				modal.classList.add('show');
+			}
+
+
+			span.onclick = function () {
+				modal.classList.remove('show');
+			}
+
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.classList.remove('show');
+				}
+			}
+
+		</script>
+</body>
+
+</html>

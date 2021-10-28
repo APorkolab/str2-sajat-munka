@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+
+@media (max-width: 560px) {
+	.modal-content {
+		width: 50%;
+	}
+
+}
+
+@media (min-width: 0px, max-width: 560px) {
+	.modal-content {
+		width: 100%;
+	}
+}
+
+body {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.modal {
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	top: -100%;
+	opacity: 0;
+	transition: top 0.4s, opacity 0.4s;
+}
+
+.modal.show {
+	top: 0;
+	opacity: 1;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	position: relative;
+	margin: 13% auto;
+	height: auto;
+	padding-bottom: 40px;
+	border: 1px solid #888;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: 1px solid #888;
+}
+
+/* A bezárás gombja */
+.close {
+	color: black;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+#cancelBtn {
+	background-color: #e84d38;
+	color: white;
+	float: right;
+	font-size: 1.3rem;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 200%;
+}
+
+#okeyBtn {
+	background-color: #2ecc6e;
+	color: white;
+	float: right;
+	font-size: 1.3rem;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 200%;
+}
+
+#myBtn {
+	line-height: 200%;
+	font-size: 1.5rem;
+	background-color: #007afc;
+	color: white;
+	border-radius: 10px;
+}
