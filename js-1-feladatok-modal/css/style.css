@@ -4,13 +4,6 @@
 	.modal-content {
 		width: 50%;
 	}
-
-}
-
-@media (min-width: 0px, max-width: 560px) {
-	.modal-content {
-		width: 100%;
-	}
 }
 
 body {
