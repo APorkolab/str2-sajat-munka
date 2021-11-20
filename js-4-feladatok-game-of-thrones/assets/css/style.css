@@ -1,0 +1,119 @@
+@font-face {
+	font-family: GOT;
+	src: url('/assets/fonts/Game\ of\ Thrones.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+HTML {
+	background-image: url('/assets/assets/site/mapblue.jpg');
+	background-origin: content-box;
+
+	font-family: GOT, sans-serif;
+}
+
+.flex-container {
+	width: 85%;
+	display: flex;
+	flex-flow: row wrap;
+
+	/* background-color: DodgerBlue; */
+}
+
+#charDetails {
+	font-family: 'Roboto', sans-serif;
+	margin: 1rem;
+	padding: 1rem;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.flex-container>div {
+	width: 100px;
+	margin: 10px;
+	flex: 0 1 calc(11% - 8px);
+	text-align: center;
+	font-size: 1rem;
+}
+
+.charCard {
+	color: #81695f;
+}
+
+
+#search_input {
+	position: absolute;
+	right: 1rem;
+	bottom: 2.5rem;
+	width: 70%;
+	height: 40px;
+	padding: 15px 15px;
+	line-height: 28px;
+	font-size: 0.8rem;
+}
+
+#search_btn {
+	position: absolute;
+	left: 1rem;
+	bottom: 2.3rem;
+	height: 40px;
+	padding: 15px 15px;
+	line-height: 8px;
+	font-size: 1.5rem;
+	text-align: center;
+	background-color: #39393a;
+	color: white;
+
+}
+
+
+.sidenav {
+	height: 100%;
+	width: 550px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #39393a;
+	overflow-x: hidden;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.sidenav a {
+	padding: 6px 6px 6px 32px;
+	text-decoration: none;
+	font-size: 0.8rem;
+	color: #818181;
+	display: block;
+}
+
+#logo {
+	font-size: 1.7rem;
+	text-align: center;
+	margin-top: 25px;
+	color: white;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.main {
+	margin-left: 550px;
+	/* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) and (max-width: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+
+	.sidenav a {
+		font-size: 18px;
+	}
+
+	.flex-container {
+		flex-flow: column;
+	}
+}

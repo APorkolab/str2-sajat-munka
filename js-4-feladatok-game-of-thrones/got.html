@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link href="./assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<title>Game of Thrones</title>
+</head>
+
+<body>
+	<div class="sidenav">
+		<a href="#" id=logo>Game of Thrones</a>
+		<p id="charDetails"></p>
+
+		<form action="">
+			<input style="font-family: FontAwesome" value="&#xf054;" type="submit" id="search_btn">
+			<input type="search" id="search_input" placeholder="&#xF002; Search a character"
+				style="font-family: Arial, 'FontAwesome'" />
+		</form>
+
+	</div>
+	<div id="main">
+		<div class="flex-container" id="con">
+		</div>
+	</div>
+	<script>
+		fetch("./assets/json/got.json")
+			.then(function (response) {
+				return response;
+			})
+			.then(function (data) {
+				return characters = data.json();
+			})
+			.then(function (Normal) {
+				document.getElementById("con").innerHTML = Normal.filter(character => character.dead !== true)
+					.sort(function (a, b) {
+						if (a.name < b.name) {
+							return -1;
+						}
+						if (a.name > b.name) {
+							return 1;
+						}
+						return 0;
+					})
+					.map(
+						(data) => {
+							return `<div class='charCard'> 
+							<img 
+							 src="./assets/${data.portrait}" 
+							 alt="A Game of Thrones character" 
+							 onClick="selectCharacter(\'${data.name}\')"
+							 width="90"
+							/>
+							<h4>${data.name}</h4>
+				</div>`;
+						}
+					);
+				console.log(characters);
+
+			})
+			.catch(function (err) {
+				console.log("Fetch problem show: " + err.message);
+			});
+
+
+		let selectCharacter = (charName = 'Brienne') => {
+			fetch("./assets/json/got.json")
+				.then(function (response) {
+					return response;
+				})
+				.then(function (data) {
+					return data.json();
+				})
+				.then(function (Normal) {
+					document.getElementById("charDetails").innerHTML = Normal.filter(character => character.name === charName)
+						.map(
+							(data) => {
+								return `<div> 
+									<img src="./assets/${data.picture}" alt="A Game of Thrones character" width="300" >
+									<h4> ${data.name} <img src="./assets/assets/houses/${data.house}.png" alt="(commoner)" width="30" ></h4>
+										<h4>${data.bio}</h4>
+									</div>`;
+							}
+						);
+				})
+				.catch(function (err) {
+					console.log("Fetch problem show: " + err.message);
+				});
+		}
+
+	</script>
+</body>
+
+</html>
