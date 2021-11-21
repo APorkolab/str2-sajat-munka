@@ -33,10 +33,12 @@ HTML {
 	font-size: 1rem;
 }
 
+charCard::marker {
+	display: none;
+}
+
 .charCard {
 	color: #81695f;
-	display: list-item;
-
 }
 
 .portraitSelected {
@@ -47,9 +49,14 @@ HTML {
 }
 
 .houseMedal {
-	display: block;
-	margin-left: auto;
-	margin-right: 0;
+	float: right;
+	text-align: right;
+
+}
+
+.selCharName {
+	font-size: 1.5rem;
+	margin-top: 5px;
 }
 
 #searchbar {
@@ -76,6 +83,7 @@ HTML {
 	color: white;
 
 }
+
 
 .sidenav {
 	height: 100%;
@@ -115,10 +123,32 @@ HTML {
 	/* Same as the width of the sidenav */
 }
 
-@media screen and (max-width: 450px) {
+@media only screen and (max-width: 800px) {
 	.sidenav {
-		padding-top: 15px;
-		padding-right: 15px;
+		position: absolute;
+		left: 140px;
+		width: 50%;
+		height: 100%;
+
+	}
+
+	#main,
+	.portraitSelected {
+		width: 40%;
+	}
+
+	#searchbar {
+		position: relative;
+		width: 70%;
+	}
+
+	#search_btn {
+		display: none;
+	}
+
+	#logo {
+		font-size: smaller;
+		width: fit-content;
 	}
 
 	.sidenav a {
@@ -127,5 +157,9 @@ HTML {
 
 	.flex-container {
 		flex-flow: column wrap;
+	}
+
+	body {
+		flex-direction: column-reverse;
 	}
 }
