@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<title>That's how I spent a day of my life</title>
+
+</head>
+
+<body>
+	<!-- Modal content -->
+	<div id="mpopupBox" class="mpopup">
+		<div class="mpopup-content">
+			<div id="mpopup-head" class="mpopup-head">
+				<span class="close">×</span>
+				<h2>Result of modification</h2>
+			</div>
+			<div class="mpopup-main">
+				<p id="verdict">This is a simple modal popup using JavaScript and CSS</p>
+			</div>
+			<div id="mpopup-foot" class="mpopup-foot">
+				<p>created by APorkolab (not in an hour ;) </p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Dynamically generated table -->
+	<h1>Details of currently stored users</h1>
+	<table id='readedData'>
+	</table>
+
+	<!-- Three, not too shabby line break. Margin-usement is overrated. :) -->
+	<br>
+	<br>
+	<br>
+
+	<!-- The user registration form -->
+	<form action="http://localhost:3000/users/" method="post" id="createUser">
+		<div class="container">
+			<h1>Add new user</h1>
+			<p>Please fill in the details to create a new user.</p>
+			<hr>
+			<label><b>Enter the full name</b></label>
+			<input type="text" placeholder="Enter the full name" name="name" required>
+			<label><b>Enter Email</b></label>
+			<input type="email" placeholder="Enter Email" name="emailAddress" required>
+			<label><b>Enter the street address</b></label>
+			<input type="text" placeholder="Enter the street address" name="address" required>
+			<hr>
+			<button type="submit" a tabindex="0" href="javascript:void(0);"
+				class="registerbtn"><strong>Register</strong></button>
+		</div>
+	</form>
+
+	<!--The JavaScript scripts are imported here. -->
+
+	<script type="module">
+		import * as Formatting from "./assets/js/formatting.js";
+
+		import * as Crud from "./assets/js/crud.js";
+
+
+		import { deleteThis } from './assets/js/crud.js';
+
+		Crud.read();
+
+
+	</script>
+
+
+</body>
+
+</html>
