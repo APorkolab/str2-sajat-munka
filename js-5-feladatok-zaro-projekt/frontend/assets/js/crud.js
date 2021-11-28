@@ -1,12 +1,11 @@
-export let oldName;
-export let oldEmail;
-export let oldAddress;
 export let newName;
 export let newEmail;
 export let newAddress;
 export let newData;
-export let flag = false;
 export let called = 0;
+export let oldName;
+export let oldEmail;
+export let oldAddress;
 
 export const deleteThis = id => {
     fetch(`http://localhost:3000/users/${id}`, {
@@ -45,19 +44,27 @@ export const editThis = id => {
 
 };
 
+export const checkString = (string = '', isItEmail = false) => {
+    const stringRegex = /^[a-z0-9- .]+$/
+    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+    const lowerCase = string.toLocaleLowerCase();
+
+    if (isItEmail !== true && stringRegex.test(lowerCase)) {
+        return true;
+    } else if (isItEmail && emailRegex.test(lowerCase)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
 export const update = async id => {
     newName = document.querySelector("#name_" + id).textContent.replace(/[\n\t\r]/g, "");
     let newNameVerdict = checkString(newName, false);
-    //	newName.replace(/"/g, '');
-    //	newName.slice(2);
     newEmail = document.querySelector("#email_" + id).textContent.replace(/[\n\t\r]/g, "");
     let newEmailVerdict = checkString(newEmail, true);
-    //	newEmail.replace(/"/g, '');
-    //	newEmail.slice(2);
     newAddress = document.querySelector("#address_" + id).textContent.replace(/[\n\t\r]/g, "");
     let newAddressVerdict = checkString(newAddress, false);
-    //	newAddress.replace(/"/g, '');
-    //	newAddress.slice(2);
     console.log(newName, newEmail, newAddress);
     console.log(newNameVerdict, newEmailVerdict, newAddressVerdict);
 
@@ -79,7 +86,6 @@ export const update = async id => {
         }).then(response => {
             return response.json()
         }).then(data =>
-            // this is the data we get after putting our data,
             console.log(data)
         ).catch(function (err) {
             console.log("PUT method fetch problem show: " + err.message);
@@ -112,7 +118,7 @@ export const read = () => {
 							<td id="name_${data.id}"> ${data.name}</</h6>
 							<td id="email_${data.id}"> ${data.emailAddress}</td>
 							<td id="address_${data.id}"> ${data.address}</td>
-							<td> <button type="button" a tabindex="0" href="javascript:void(0);" id="editButton_${data.id}" class="editButton" onclick="Crud.editThis(${data.id})">Szerkesztés</button> <button type="button" id="deleteButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="deleteButton" onclick="deleteThis(${data.id});">Törlés</button> <button type="button" id="saveButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="saveButton" onclick="update(${data.id})">Mentés</button> <button type="button" id="restoreButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="restoreButton" onclick="ratherNotEdit(${data.id});">Visszavonás</button></td>
+							<td> <button type="button" a tabindex="0" href="javascript:void(0);" id="editButton_${data.id}" class="editButton" onclick="editThis(${data.id})">Edit</button> <button type="button" id="deleteButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="deleteButton" onclick="deleteThis(${data.id});">Delete</button> <button type="button" id="saveButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="saveButton" onclick="update(${data.id})">Save</button> <button type="button" id="restoreButton_${data.id}" a tabindex="0" href="javascript:void(0);" class="restoreButton" onclick="ratherNotEdit(${data.id});">Cancel</button></td>
 							</tr>`
                 ).join('');
             let header = `<tr>
@@ -142,24 +148,4 @@ export const ratherNotEdit = id => {
     document.querySelector("#email_" + id).innerText = oldEmail;
     document.querySelector("#address_" + id).innerText = oldAddress;
     called = 0;
-};
-
-export const defineId = () => {
-    fetch(`http://localhost:3000/users/`)
-        .then(function (response) {
-            return response;
-        })
-        .then(function (data) {
-            return data.json();
-        })
-        .then(function (Normal) {
-            const maxId = Normal.map(
-                (data) => Math.max(...data)
-            ).join('');
-
-            return maxId + 1;
-        })
-        .catch(function (err) {
-            console.log("Fetch problem show: " + err.message);
-        });
 };

@@ -3,17 +3,20 @@
 html {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 600;
-	background-color: #65BFC2;
-	color: #162943;
+	background-color: #235789;
+	color: #020100;
 }
 
 h1 {
 	text-align: center;
+	color: #F1D302;
+	font-weight: 800;
 }
 
 #readedData {
 	border-collapse: collapse;
-	width: 100%;
+	width: 70%;
+	margin: 0 auto;
 }
 
 #readedData td,
@@ -24,11 +27,11 @@ h1 {
 }
 
 #readedData tr:nth-child(even) {
-	background-color: #F0FFEB;
+	background-color: #FDFFFC;
 }
 
 #readedData tr:hover {
-	background-color: #E0CA3C;
+	background-color: #F1D302;
 }
 
 #readedData th {
@@ -46,7 +49,7 @@ h1 {
 }
 
 .deleteButton {
-	background-color: #C11826;
+	background-color: #C1292E;
 	color: white;
 	border-radius: 6px;
 }
@@ -86,12 +89,14 @@ label {
 .container {
 	box-sizing: border-box;
 	border-radius: 5px;
-	background-color: #f2f2f2;
+	background-color: #FDFFFC;
 	padding: 20px;
+	width: 70%;
+	margin: 0 auto;
 }
 
 .registerbtn {
-	background-color: #4CAF50;
+	background-color: #235789;
 	color: white;
 	padding: 12px 20px;
 	margin: 10px 0;

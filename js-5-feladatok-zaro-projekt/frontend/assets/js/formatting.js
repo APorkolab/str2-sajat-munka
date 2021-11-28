@@ -8,20 +8,6 @@ export const weAreNotEditRowAtTheMoment = id => {
     document.querySelector("#address_" + id).setAttribute("contentEditable", false);
 };
 
-export const checkString = (string = '', isItEmail = false) => {
-    const stringRegex = /^[a-z0-9- .]+$/
-    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
-    const lowerCase = string.toLocaleLowerCase();
-
-    if (isItEmail !== true && stringRegex.test(lowerCase)) {
-        return true;
-    } else if (isItEmail && emailRegex.test(lowerCase)) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
 export const message = (messageText = '', verdict = false) => {
     // get the mPopup
     const mpopup = document.getElementById('mpopupBox');
@@ -33,7 +19,7 @@ export const message = (messageText = '', verdict = false) => {
         document.getElementById('mpopupBox').style.display = 'none';
     }, 5000);
 
-    //decide what color will be the modal
+    //decide the color of the modal
     if (verdict) {
         document.getElementById('mpopup-head').style.backgroundColor = "green";
         document.getElementById('mpopup-foot').style.backgroundColor = "green";

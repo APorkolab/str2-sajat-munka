@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./assets/css/style.css">
-	<title>That's how I spent a day of my life</title>
+	<title>Table of Users</title>
 
 </head>
 
@@ -56,18 +56,44 @@
 	</form>
 
 	<!--The JavaScript scripts are imported here. -->
-
 	<script type="module">
 		import * as Formatting from "./assets/js/formatting.js";
-
 		import * as Crud from "./assets/js/crud.js";
-
-
-		import { deleteThis } from './assets/js/crud.js';
-
 		Crud.read();
 
+		function deleteThis(id) {
+			Crud.deleteThis(id);
+		}
 
+		function editThis(id) {
+			Crud.editThis(id);
+		}
+
+		function update(id) {
+			Crud.update(id);
+		}
+
+		function ratherNotEdit(id) {
+			Crud.ratherNotEdit(id);
+		}
+		function weAreNotEditRowAtTheMoment(id) {
+			Formatting.weAreNotEditRowAtTheMoment(id);
+		}
+		function checkString(string, isItEmail) {
+			Formatting.checkString(string, isItEmail);
+		}
+		function message(messageText, verdict) {
+			Formatting.message(messageText, verdict);
+		}
+
+		// variable function
+		window.deleteThis = deleteThis;
+		window.editThis = editThis;
+		window.update = update;
+		window.ratherNotEdit = ratherNotEdit;
+		window.weAreNotEditRowAtTheMoment = weAreNotEditRowAtTheMoment;
+		window.checkString = checkString;
+		window.message = message;
 	</script>
 
 
