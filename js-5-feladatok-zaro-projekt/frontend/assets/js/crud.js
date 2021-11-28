@@ -60,13 +60,19 @@ export const checkString = (string = '', isItEmail = false) => {
 
 export const update = async id => {
     newName = document.querySelector("#name_" + id).textContent.replace(/[\n\t\r]/g, "");
+    newName.replace(/"/g, '');
+    newName.trim();
     let newNameVerdict = checkString(newName, false);
     newEmail = document.querySelector("#email_" + id).textContent.replace(/[\n\t\r]/g, "");
     let newEmailVerdict = checkString(newEmail, true);
+    newEmail.replace(/"/g, '');
+    newEmail.trim();
     newAddress = document.querySelector("#address_" + id).textContent.replace(/[\n\t\r]/g, "");
     let newAddressVerdict = checkString(newAddress, false);
-    console.log(newName, newEmail, newAddress);
-    console.log(newNameVerdict, newEmailVerdict, newAddressVerdict);
+    newAddress.replace(/"/g, '');
+    newAddress.trim();
+    //console.log(newName, newEmail, newAddress);
+    //console.log(newNameVerdict, newEmailVerdict, newAddressVerdict);
 
     if (newNameVerdict && newEmailVerdict && newAddressVerdict) {
         message('Hello! The entered data are valid. We saved them to the database already!', true);
