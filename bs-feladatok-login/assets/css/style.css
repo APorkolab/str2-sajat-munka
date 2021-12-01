@@ -1,0 +1,20 @@
+html,
+body,
+main {
+	height: 100%;
+	background-color: #f8f8f8;
+}
+
+#bootstrapLogo {
+	width: 100px;
+}
+
+#pleaseSign {
+	font-size: 1.8rem;
+}
+
+#inputs {
+	margin-bottom: 0;
+	padding-bottom: 0;
+
+}
