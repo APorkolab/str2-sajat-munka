@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Catamaran&family=Lato:wght@300&family=Mulish:wght@300&display=swap");
-/* .phoneMix {
-https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap.css
-} */
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/*Fonts*/
+@import "https://fonts.googleapis.com/css2?family=Catamaran&family=Lato:wght@300&family=Mulish:wght@300&display=swap";
 .catamaran {
   font-family: "Catamaran", Arial, Helvetica, sans-serif;
 }
@@ -20,22 +11,28 @@ html {
   font-family: "Mulish", Arial, Helvetica, sans-serif;
 }
 
-/*Navbar */
-#bootstrap-override .navbar-brand {
-  color: #fdd34c;
+html {
+  scroll-behavior: smooth;
 }
 
-#bootstrap-override .navbar-brand:hover,
+#bootstrap-override .navbar-brand {
+  color: #fdcc52;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bootstrap-override .navbar-brand:hover {
+  color: #fff;
+  text-decoration: none;
+}
+#bootstrap-override .navbar-collapse a {
+  color: #eabbd9;
+}
 #bootstrap-override .navbar-collapse a:hover {
   color: white;
   text-decoration: none;
 }
 
-#bootstrap-override .navbar-collapse a {
-  color: #eabbd9;
-}
-
-/* 1st part - header & mobile */
 .headerText {
   font-size: 3.2rem;
   font-weight: 350;
@@ -47,29 +44,34 @@ html {
 }
 
 .linearGradient {
-  background-image: url("../../img/bg-pattern.png"), linear-gradient(85deg, #d72631, #7c4394);
+  background-image: url("../../img/bg-pattern.png"), linear-gradient(85deg, #da2431, #7c4394);
 }
 
 .lemonDrift {
   transition: all 0.3s ease;
 }
-
 .lemonDrift:hover {
-  background: #fdcc52;
+  background: #817d71;
   border-color: #fdcc52;
   transition: all 0.3s ease;
 }
 
 .goldenScreen {
-  background-color: #fdca4a;
+  background-color: #fdcc52;
 }
 
 .border-bottom {
   width: 100px;
 }
 
-/* Image blur filter*/
-.filter,
+.filter {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .onTopOfFilter {
   top: 0;
   right: 0;
@@ -77,44 +79,37 @@ html {
   bottom: 0;
 }
 
-.filter {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-/* Icons - social*/
 .bg-blue {
   background-color: #1da1f3;
+  opacity: 0.9;
+}
+.bg-blue:hover {
+  opacity: 1;
 }
 
 .bg-darkblue {
   background-color: #3b5999;
-}
-
-.bg-red {
-  background-color: #dd4c39;
-}
-
-.bg-blue,
-.bg-darkblue,
-.bg-red {
   opacity: 0.9;
 }
+.bg-darkblue:hover {
+  opacity: 1;
+}
 
-.bg-blue:hover,
-.bg-darkblue:hover,
+.bg-red {
+  background-color: #da2431;
+  opacity: 0.9;
+}
 .bg-red:hover {
   opacity: 1;
 }
 
-/* Footer */
 #contact a {
-  color: white;
+  color: #fff;
 }
 
 footer .nav a {
   color: inherit;
 }
-
 footer .nav a:hover {
   color: #fdcc52;
   text-decoration: none;
@@ -125,7 +120,6 @@ footer .nav a:hover {
   padding-bottom: 2%;
 }
 
-/* Responsive directives*/
 @media only screen and (max-width: 768px) {
   .mobileImage {
     top: 44px;
@@ -136,7 +130,7 @@ footer .nav a:hover {
   }
 
   #bootstrap-override .navbar {
-    background-color: white;
+    background-color: #fff;
   }
 }
 

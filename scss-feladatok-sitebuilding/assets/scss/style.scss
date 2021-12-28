@@ -1,46 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran&family=Lato:wght@300&family=Mulish:wght@300&display=swap');
+@use 'colors';
+@use 'fonts';
 
-/* .phoneMix {
-https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap.css
-} */
+@use 'mixins/mixins'as mixin;
 
-/* Smooth scrolling */
 html {
 	scroll-behavior: smooth;
 }
 
-/*Fonts*/
 
-.catamaran {
-	font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+#bootstrap-override {
+	.navbar-brand {
+		color: colors.$yellow;
+		@include mixin.center;
+
+		&:hover {
+			color: colors.$white;
+			text-decoration: none;
+		}
+	}
+
+	.navbar-collapse {
+		a {
+			&:hover {
+				color: white;
+				text-decoration: none;
+			}
+
+			color: #eabbd9;
+		}
+	}
 }
 
-.lato {
-	font-family: 'Lato', Arial, Helvetica, sans-serif;
-}
-
-.mulish {
-	font-family: 'Mulish', Arial, Helvetica, sans-serif;
-}
-
-
-/*Navbar */
-#bootstrap-override .navbar-brand {
-	color: #fdd34c;
-}
-
-#bootstrap-override .navbar-brand:hover,
-#bootstrap-override .navbar-collapse a:hover {
-	color: white;
-	text-decoration: none;
-}
-
-#bootstrap-override .navbar-collapse a {
-	color: #eabbd9;
-}
-
-
-/* 1st part - header & mobile */
 .headerText {
 	font-size: 3.2rem;
 	font-weight: 350;
@@ -52,30 +42,35 @@ html {
 }
 
 .linearGradient {
-	background-image: url('../../img/bg-pattern.png'), linear-gradient(85deg, #d72631, #7c4394);
+	background-image: url("../../img/bg-pattern.png"), linear-gradient(85deg, colors.$red, #7c4394);
 }
 
 .lemonDrift {
 	transition: all 0.3s ease;
-}
 
-.lemonDrift:hover {
-	background: #fdcc52;
-	border-color: #fdcc52;
-	transition: all 0.3s ease;
+	&:hover {
+		background: #817d71;
+		border-color: colors.$yellow;
+		transition: all 0.3s ease;
+	}
 }
 
 .goldenScreen {
-	background-color: #fdca4a;
+	background-color: colors.$yellow;
 }
 
 .border-bottom {
 	width: 100px;
 }
 
-/* Image blur filter*/
+.filter {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
 
-.filter,
 .onTopOfFilter {
 	top: 0;
 	right: 0;
@@ -83,57 +78,56 @@ html {
 	bottom: 0;
 }
 
-.filter {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-
-/* Icons - social*/
-
 .bg-blue {
 	background-color: #1da1f3;
+	opacity: 0.9;
+
+	&:hover {
+		opacity: 1;
+	}
 }
 
 .bg-darkblue {
 	background-color: #3b5999;
-}
-
-.bg-red {
-	background-color: #dd4c39;
-}
-
-.bg-blue,
-.bg-darkblue,
-.bg-red {
 	opacity: 0.9;
+
+	&:hover {
+		opacity: 1;
+	}
 }
 
-.bg-blue:hover,
-.bg-darkblue:hover,
-.bg-red:hover {
-	opacity: 1;
+.bg-red {
+	background-color: colors.$red;
+	opacity: 0.9;
+
+	&:hover {
+		opacity: 1;
+	}
 }
 
-/* Footer */
-
-#contact a {
-	color: white;
+#contact {
+	a {
+		color: colors.$white;
+	}
 }
 
-footer .nav a {
-	color: inherit;
-}
+footer {
+	.nav {
+		a {
+			color: inherit;
 
-footer .nav a:hover {
-	color: #fdcc52;
-	text-decoration: none;
-	cursor: pointer;
+			&:hover {
+				color: colors.$yellow;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 .footerMenu {
 	padding-bottom: 2%;
 }
-
-/* Responsive directives*/
 
 @media only screen and (max-width: 768px) {
 	.mobileImage {
@@ -144,8 +138,9 @@ footer .nav a:hover {
 		font-size: 1.25rem;
 	}
 
-	#bootstrap-override .navbar {
-		background-color: white;
-
+	#bootstrap-override {
+		.navbar {
+			background-color: colors.$white;
+		}
 	}
 }
